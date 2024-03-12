@@ -5,12 +5,11 @@ def normalize_phone(phone_number):
 
     if not normalized_number.startswith('+'):
         if normalized_number.startswith('380'):
-            normalized_number = '+38' + normalized_number[3:]
+            normalized_number = '+380' + normalized_number[3:]
         else:
             normalized_number = '+38' + normalized_number
     
     return normalized_number
-
 
 
 raw_numbers = [
@@ -23,6 +22,7 @@ raw_numbers = [
     "(050)8889900",
     "38050-111-22-22",
     "38050 111 22 11   ",
+    "+38(073)123-11-34",
 ]
 
 sanitized_numbers = [normalize_phone(num) for num in raw_numbers]
